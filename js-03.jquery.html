@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery对象 添加类移除类</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ccc;
+		}
+		.father{
+			background: pink;
+			overflow: hidden;
+			
+		}
+		.son{
+			width: 2000px;
+			height: 200px;
+			/*background: blue;*/
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="点我点我">
+	
+	<div>
+		我是div
+		<p>
+			我是段落
+		</p>
+		
+	</div>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var oBtn = document.getElementById('btn');
+		oBtn.onclick= function(){
+			//给jQuery对象添加class
+			$('div').addClass('box1');
+			//移除class box2
+			//$('div').removeClass("box2")
+			//toggleClass 如果对象上没有该值，就设置该值。如果有该值，就删处该值。
+			$('div').toggleClass('box3');
+			//html()方法是返回jQuery对象的内容，标签也会返回
+			console.log($('div').html());
+			//返回jQuery的对象的内容，只返回文本。
+			console.log($('div').text());
+			//$('div').css('width','300px');
+			//$('div').css('width','300px')的返回值仍然是一个jQuery对象，因此可以继续写css.
+			//$('div').css('width','300px').css('height','300px');
+			//可以接收一个对象
+			$('div').css({
+				width:500,
+				height:500,
+				background:'pink'
+				
+			})
+			//offset()方法获取jQuery元素距离浏览器上面和下面的距离
+			console.log($('.son').offset());
+			//offset()方法可以设置值
+			// $('.son').offset({
+			// 	top:20,
+			// 	left:20
+			// })
+			//position()方法只能获取值，不能设置值
+			// $('.son').position();
+		}
+	})
+</script>
+</html>
