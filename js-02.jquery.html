@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历数组</title>
+</head>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<body>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+		<li>li4</li>
+		<li>li5</li>
+	</ul>
+	<div></div>
+	<div>我是</div>
+	<div><p>我是段落</p></div>
+	<div><span>我是段落</span></div>
+</body>
+<script type="text/javascript">
+	// var oLi = document.getElementsByTagName('li');
+	// var arr =[11,12,45,89,96];
+	// var likeArr = {0:'aaa',1:"BBB",2:"ccc",length:3};
+	//jQuery的each遍历方法可以遍历数组
+	// $.each(arr,function(index,value){
+	// 	console.log(index+":::"+value);
+	// })
+	//jQuery的each遍历方法可以遍历伪数组
+	// $.each(oLi,function(index,value){
+	// 	console.log(index+":::",value);
+	// })
+	//jQuery的each遍历方法可以遍历伪数组
+	// $.each(likeArr,function(index,value){
+	// 	console.log(index+":::"+value);
+	// })
+	// $.map(likeArr,function(index,value){
+	// 	console.log(index+":::"+value);
+	// })
+	// $.map(oLi,function(index,value){
+	// 	console.log(index+":::"+value);
+	// })
+	// $.map(arr,function(index,value){
+	// 	console.log(index+":::"+value);
+	// })
+	$(function(){
+		var a='123';
+		var arr =[11,12,45,89,96];
+		var likeArr = {0:'aaa',1:"BBB",2:"ccc",length:3};
+		function test(){}
+		//$.trim()去掉字符串的空格
+		console.log($.trim("  --a b c--  "));
+		console.log("  --a b c--  ");
+		//判断是否是window对象
+		console.log($.isWindow(a));
+		//判断是否是真数组。 arr是真数组，likeArr是伪数组。
+		console.log($.isArray(arr));
+		console.log($.isArray(likeArr));
+		// 判断是否是否是函数
+		console.log($.isFunction(test));
+		//$.holdReady(布尔值)，下面的代码是否执行
+		//$.isReady(true);
+		// function test1(){
+		// 	alert("aasddfff");
+		// }
+		// test1();
+	})
+	//基本过滤器
+	$(function(){
+		console.log($('div'));
+		//只选择下标为0 的div
+		console.log($('div:eq(0)'));
+		//值选择既没有文本也没有标签的div
+		console.log($('div:empty'));
+		console.log($('divL:parent'));
+		//选择包含“我是”的div
+		console.log($('div:contains(我是)'));
+		//选择含有p标签的div
+		console.log($('div:has(p)'));
+	})
+	//过滤方法
+	
+</script>
+</html>
