@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery自定义动画</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('button').click(function(){
+				//自定义函数
+				/*
+				$('div').animate({
+					width:600
+				},1000,)
+				//自定义函数，里面参数具有回调函数
+				/*
+				$('div').animate({
+					width:600
+				},1000,function(){
+					alert('自定义动画回调函数');
+				});
+				$('div').animate({
+					height:600
+				},1000,);
+				$('div').animate({
+					opacity:0.5
+				},1000,);
+				*/
+				//链式结构对象,因为jQuery对象完成animate动画后，返回值仍然是一个jQuery对象，所以可以继续添加jQuery动画函数
+			/*
+				$('div').animate({
+					width:600
+				},1000).animate({
+					height:200
+				},1000).animate({
+					opacity:0.5
+				},1000);
+			*/
+				// 回调函数,利用回调函数把下一个动画放进去
+				
+				$('div').animate({
+					width:600
+				},1000,function(){
+					$('div').animate({
+						height:600
+					},1000,function(){
+						$('div').animate({
+							opacity:0.5
+						},1000)
+					})
+				});
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>开始动画</button>
+	<div></div>
+</body>
+</html>
