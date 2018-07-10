@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			$('li').click(function(){
+				alert($('li').html());
+			});
+			*/
+			$('ul').delegate('li','click',function(){
+				alert($('li').html());
+			});
+			$('button').click(function(){
+				var oLi = $<'我是创建的LI'>;
+				$('ul').append(oLi);
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>点我点我点我</button>
+	<ul>
+		<li>我是Li1</li>
+		<li>我是Li2</li>
+		<li>我是Li3</li>
+		<li>我是Li4</li>
+		<li>我是Li5</li>
+	</ul>
+</body>
+</html>
