@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>kQuery事件测试</title>
+</head>
+<body>
+	<button>Btn1</button>
+	<button>Btn2</button>
+	<button>Btn3</button>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js-26-Kquery.js"></script>
+<script type="text/javascript">
+	var oBtn = document.getElementsByTagName('button')[0];
+	if(oBtn.addEventListener){
+		oBtn.addEventListener('click',function(){
+			alert('click');
+		})
+		oBtn.addEventListener('mouseover',function(){
+			alert('mouseover');
+		})
+	}else{
+		oBtn.attachEvent('on'+'click',function(){
+			alert('click');
+		})
+	}
+	
+</script>
+</html>
