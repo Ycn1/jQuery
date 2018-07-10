@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>kQuery属性上的相关操作</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<!-- <script type="text/javascript" src="js-26-Kquery.js"></script> -->
+</head>
+<body>
+	<ul>
+		<li class="box box2">li1</li>
+		<li class="box">li2</li>
+		<li class="box">li3</li>
+		<li class="box">li4</li>
+		<li class="box">li5</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	$(function(){
+		// console.log($('li').html())
+		// console.log($('li').html('hahahahah'));
+		// console.log($('li').text());
+		// console.log($('li').text('123'));
+		// console.log($('li').addClass('box3 box'));
+		// console.log($('li').attr(name));
+		// console.log($('li').removeClass('box'));
+		// console.log($('li').removeClass());
+		// console.log($('li').toggleClass());
+		// console.log($('li').toggleClass('box2'));
+		// console.log($('li').empty());
+		// console.log($('li').remove());
+		// console.log($('li').append());
+		console.log($('li').each(function(index,value){
+			console.log(index,value);
+		}));
+
+	})
+</script>
+</html>
