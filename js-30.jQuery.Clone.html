@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clone方法</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<!-- <script type="text/javascript" src="js-26-Kquery.js"></script> -->
+</head>
+<body>
+	<button>测试</button>
+	<div>div1</div>
+	<div>div2</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('button').click(function(){
+			$('div').cloneNode(true);
+		})
+	})
+</script>
+</html>
