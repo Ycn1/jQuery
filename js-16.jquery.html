@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插入元素</title>
+</head>
+<body>
+	<button>创建LI</button>
+	<ul>
+		<li>我是1</li>
+		<li>我是2</li>
+		<li>我是3</li>
+		<li>我是4</li>
+		<li>我是5</li>
+	</ul>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('button').click(function(){
+			var $LI = $('<li>我是创建的</li>');
+			//在ul后面添加新创建的LI
+			//$('ul').append($LI);
+			//把$LI添加到ul尾部
+			//$LI.appendTo($('ul'));
+			//把$LI添加到ul的头部
+			// $('ul').prepend($LI);
+			//把$LI添加到ul的后面，不在ul里面
+			// $('ul').after($LI);
+			$('ul').after($LI);
+		});
+		
+	})
+</script>
+</html>
