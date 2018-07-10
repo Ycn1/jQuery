@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>append 和prepend方法</title>
+	<!-- <script type="text/javascript" src="jquery-1.12.4.js"></script> -->
+	<script type="text/javascript" src="js-26-Kquery.js"></script>
+</head>
+<body>
+	<ul>
+		<li>li</li>
+		<li>li</li>
+		<li>li</li>
+	</ul>
+	<p>我是段落</p>
+	<button>btn1</button>
+</body>
+<script type="text/javascript">
+	$(function(){
+		// console.log($('li').append());
+		// console.log($('li').append($('p')));
+		console.log($('li').append('<p>我是内容</p>'));
+		console.log($('button').on('click',function(){
+			alert('click');
+		}))
+	})
+</script>
+</html>
