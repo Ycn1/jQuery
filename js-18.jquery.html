@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>替换节点</title>
+</head>
+<body>
+	<button>替换</button>
+	<div>我是内容</div>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$('button').click(function(){
+		var $H1 = $('<div>我是新的内容</div>');
+	$('div').replaceWith($H1);
+	})
+	
+</script>
+</html>
