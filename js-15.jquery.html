@@ -1,0 +1,123 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>小作业</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				background: #ccc;
+			}
+			 .tb{
+				width: 150px;
+				float: left;
+				margin-left:700px;
+				/*height: 50px;*/
+				/*overflow: hidden;*/
+			}
+			 .sc{
+				float: left;
+				width: 150px;
+				/*height: 50px;*/
+				/*overflow: hidden;*/
+			}
+			ul li{
+				width: 150px;
+				height: 50px;
+				list-style: none;
+				border: 1px solid #fff;
+				background: #fff;
+				line-height: 50px;
+				text-align: center;
+				display: none;
+			}
+			ul li:first-Child{
+				display: block;
+			}
+			.active{
+				color: #ff7600;
+			}
+			ul li.show{
+				display:block;
+			}
+			ul  .sp1{
+				color: #000;
+				background: #fff;
+				transform:rotateZ(90deg);
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+				/*vertical-align: top;*/
+			}
+			ul  .sp2{
+				transform:rotateZ(270deg);
+				color: #ff6700;
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+				background: #fff;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.tb').mouseenter(function(){
+					var $Li = $('ul>li').eq(0);
+					$Li.addClass('active')
+					$('ul>li').eq(1).stop();
+					$('ul>li').eq(1).slideDown(500);
+					$('ul>li').eq(1).css('background','#dedede');
+					$('ul>li').eq(2).stop();
+					$('ul>li').eq(2).slideDown(500);
+					$('ul>li').eq(2).css('background','#dedede');
+					$('.tb li span').addClass('sp2');
+				});
+				$('.tb').mouseleave(function(){
+					var $Li = $('ul>li').eq(0);
+					$Li.removeClass('active')
+					$('ul>li').eq(1).stop();
+					$('ul>li').eq(1).slideUp(500);
+					$('ul>li').eq(2).stop();
+					$('ul>li').eq(2).slideUp(500);
+					$('.tb li span').removeClass('sp2');
+				})
+				$('.sc').mouseenter(function(){
+					var $Li = $('.sc li').eq(0);
+					console.log($Li);
+					$Li.addClass('active')
+					$('.sc li').eq(1).stop();					
+					$('.sc li').eq(1).slideDown(500);
+					$('.sc li').eq(1).css('background','#dedede');
+					$('.sc li').eq(2).stop();					
+					$('.sc li').eq(2).slideDown(500);
+					$('.sc li').eq(2).css('background','#dedede');
+					$('.sc li span').addClass('sp2');
+				});
+				$('.sc').mouseleave(function(){
+					var $Li = $('.sc li').eq(0);
+					console.log($Li);
+					$Li.removeClass('active')
+					$('.sc li').eq(1).stop();					
+					$('.sc li').eq(1).slideUp(500);
+					$('.sc li').eq(2).stop();					
+					$('.sc li').eq(2).slideUp(500);
+					$('.sc li span').removeClass('sp2');
+				});
+				
+			})
+		</script>
+	</head>
+	<body>
+		<ul class="tb">
+			<li>我的淘宝 <span class="sp1">&gt;</span></li>
+			<li>已买到宝贝</li>
+			<li>我的足迹</li>
+		</ul>
+		<ul class="sc">
+			<li>收藏夹 <span class="sp1">&gt;</span></li>
+			<li>收藏的宝贝</li>
+			<li>收藏店铺</li>
+		</ul>
+	</body>
+	</html>
