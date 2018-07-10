@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	选项卡</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;	
+		}
+		.btn{
+			overflow: hidden;
+		}
+		.btn li{
+			list-style: none;
+			width: 50px;
+			height:30px;
+			line-height: 30px;
+			text-align: center;
+			border: 1px solid #000;
+			float: left;
+		}
+		.btn li.active{
+			background: #000;
+			color: #fff;
+		}
+		.content li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			border:1px solid #000;
+			display: none;
+
+		}
+		.content li.act{
+			display: block;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('li').click(function(){
+				var $LI = $(this);
+				//给选定的jQuery对象添加类active
+				$LI.addClass('active');
+				//给选定对象的jQuery对象的兄弟清楚active类
+				$LI.siblings().removeClass('active');
+				var $index = $LI.index();
+				$('.content>li').eq($index).addClass('act');
+				$('.content>li').eq($index).siblings().removeClass('act');
+
+			})
+			
+		})
+	</script>
+</head>
+<body>
+		<ul class="btn">
+			<li class="active">btn1</li>
+			<li>btn2</li>
+			<li>btn3</li>
+			<li>btn4</li>
+			<li>btn5</li>
+		</ul>
+		<ul class="content">
+			<li class="act">我是内容1</li>
+			<li>我是内容2</li>
+			<li>我是内容3</li>
+			<li>我是内容4</li>
+			<li>我是内容5</li>
+		</ul>
+</body>
+</html>
