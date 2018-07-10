@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单验证插件</title>
+</head>
+<body>
+	<div>
+		<form action="https://www.kuazhu.com" id="fm1">
+			<label>用户名</label>
+			<input type="text" name="username" id="username">
+			<label>密码</label>
+			<input type="text" name="password" id="password">
+			<label>邮箱</label>
+			<input type="text" name="mail" id="mail">
+			<input type="submit" value="登陆">
+		</form>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<!-- <script type="text/javascript" src="validate.js"></script> -->
+<script type="text/javascript"></script>
+<script type="text/javascript" src="../Download/jquery-validation-1.17.0/dist/jquery.validate.min.js">
+	$(function(){
+		$('#fm1').validate({
+			username:true
+		})
+	})
+</script>
+</html>
