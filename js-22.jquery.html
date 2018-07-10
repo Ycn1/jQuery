@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基于对象的插件</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			border: 1px solid #000;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<button>点我变色</button>
+	<div>我是内容</div>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	;(function($){
+	
+			
+				$.prototype.setColor= function(options){
+				var defaults ={
+					color:"red"
+				};
+				options = $.extend(defaults,options);
+				this.css('color',options.color);
+			}
+			// $('div').setColor({
+			// 	color:'pink'
+			// })
+			
+			// $('div').css("color","red");
+
+	
+	})(jQuery)
+</script>
+<script type="text/javascript">
+	$(function(){
+		$('button').click(function(){
+			
+			// 	$.prototype.setColor= function(options){
+			// 	var defaults ={
+			// 		color:"red"
+			// 	};
+			// 	options = $.extend(defaults,options);
+			// 	this.css('color',options.color);
+			// }
+			$('div').setColor({
+				color:'pink'
+			})
+			// $('div').setColor({})
+			// $('div').css("color","red");
+		})
+		
+	})
+</script>
+</html>
