@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡案例</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			margin:100px 300px 100px 500px;
+		}
+		.btn{
+			margin-bottom: 20px;
+		}
+		.content{
+			margin-top: 20px;
+		}
+		.btn li{
+			list-style: none;
+			width: 100px;
+			height: 20px;
+			float: left;
+			border: 1px solid #000;
+			margin-bottom: 100px;
+			text-align: center;
+		}
+		.btn li.active{
+			background: yellow;
+			color: black;
+		}
+		.btn>li.current{
+			background: red;
+		}
+		.content li{
+			width: 500px;
+			list-style: none;
+			height: 300px;
+			border: 1px solid #000;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="tab">
+		<ul class="btn">
+			<li class="active">按钮1</li>
+			<li>按钮2</li>
+			<li>按钮3</li>
+			<li>按钮4</li>
+			<li>按钮5</li>
+		</ul>
+		<ul class="content">
+			<li style="display: block;">我是内容1</li>
+			<li>我是内容2</li>
+			<li>我是内容3</li>
+			<li>我是内容4</li>
+			<li>我是内容5</li>
+		</ul>
+	</div>
+	<div class="tab">
+		<ul class="btn">
+			<li class="current">按钮1</li>
+			<li>按钮2</li>
+			<li>按钮3</li>
+			<li>按钮4</li>
+			<li>按钮5</li>
+		</ul>
+		<ul class="content">
+			<li style="display: block;">我是内容1</li>
+			<li>我是内容2</li>
+			<li>我是内容3</li>
+			<li>我是内容4</li>
+			<li>我是内容5</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	(function($){
+		$.fn.extend({
+			tab:function(options){
+				var defaults = {
+					addClass:'active',
+					selectBtn:'.btn>li',
+					selectCon:'.content>li',
+					eventType:'click'
+				}
+				options =$.extend(defaults,options);
+				console.log(this);
+				this.each(function(){
+					var $tab = $(this);
+					var $btn = $(options.selectBtn);
+					$btn.on(options.eventType,function(){
+						$(this).addClass(options.addClass).siblings().removeClass(options.addClass);
+						var index = $(this).index();
+						$tab.find(options.selectCon).eq(index).show().siblings().hide();
+						$tab.find(options.selectCon).eq(index).show();
+					})
+				})
+			}
+		})
+	})(jQuery);
+</script>
+<script type="text/javascript">
+	$(function(){
+		$('.tab').tab({
+		});
+	})
+</script>
+</html>
