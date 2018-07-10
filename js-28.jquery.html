@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>extend方法</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var obj1 ={
+		test1:function(){
+			console.log("test1")
+		},
+
+		test2:function(){
+			console.log("test2")
+		}
+	}
+	function Person(){
+
+	}
+	Person.prototype= function(obj){
+		for(key in obj){
+			this[key] = obj[key]
+		}
+	}
+	Person.test1();
+	Person.prototype(obj1);
+	var p = new Person();
+	p.test1();
+</script>
+
+<!-- get:function(num){
+			if(arguments.length ==1){
+				if(num>=0){
+					return this[num];
+				}else {
+					return this[this.length+num];
+				}
+			}
+			else{
+				return this.toArray();
+			}
+		},
+		eq:function(num){
+			if(arguments.length ==1){
+				return kQuery(this.get(num));
+			}else{
+				return new kQuery();
+			}
+		}
+ -->
+</html>
