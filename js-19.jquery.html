@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>赋值节点</title>
+</head>
+<body>
+	<button>赋值</button>
+	<div>我是内容</div>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$('button').click(function(){
+		var $Div =$('div').clone();
+		$Div.click(function(){
+			alert('aaa');
+		})
+		$('body').append($Div);
+	})
+</script>
+</html>
