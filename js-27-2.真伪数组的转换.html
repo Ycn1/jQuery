@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>真伪数组的转换</title>
+	<script src="jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js-26-Kquery.js"></script>
+
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var arr =[];
+	var obj={};
+	var arr1 =[11,22,33,44,55];
+	var likeArr = {0:'aaa',1:'bbb',2:'ccc',length:3};
+	//真数组转换成伪数组
+	[].push.apply(obj,arr1);
+	console.log(obj);
+	//伪数组转换成真数组
+	var arr4 = [].slice.call(likeArr);
+	console.log(arr4);
+</script>
+</html>
